@@ -33,26 +33,47 @@ String read_room_temperature() {
 
 // Buzzer functions
 String play_melody() {
-  tone(PinConfig::BUZZER, NOTE_A3, 8);
+  tone(PinConfig::BUZZER, NOTE_C3, 8);
 }
 
 String melody_01() {
-  tone(PinConfig::BUZZER, NOTE_A3, 8);
+  for (int i = 0; i < 5; i++) {
+    tone(PinConfig::BUZZER, NOTE_A1, 8);
+    //delay(1000);
+    //noTone(PinConfig::BUZZER);
+    //delay(1000);
+  }
   Serial.println("melody 01");
 }
 
 String melody_02() {
-  tone(PinConfig::BUZZER, NOTE_C3, 8);
+  for (int i = 0; i < 5; i++) {
+    tone(PinConfig::BUZZER, NOTE_C3, 8);
+    //delay(1000);
+    //noTone(PinConfig::BUZZER);
+    //delay(1000);
+  }
   Serial.println("melody 02");
 }
 
 String melody_03() {
-  tone(PinConfig::BUZZER, NOTE_E3, 8);
+  for (int i = 0; i < 5; i++) {
+    tone(PinConfig::BUZZER, NOTE_E5, 8);
+    //delay(1000);
+    //noTone(PinConfig::BUZZER);
+    //delay(1000);
+  }
+
   Serial.println("melody 03");
 }
 
 String melody_04() {
-  tone(PinConfig::BUZZER, NOTE_G3, 8);
+  for (int i = 0; i < 5; i++) {
+    tone(PinConfig::BUZZER, NOTE_G7, 8);
+    //delay(1000);
+    //noTone(PinConfig::BUZZER);
+    //delay(1000);
+  }
   Serial.println("melody 04");
 }
 
@@ -87,10 +108,10 @@ void setup() {
   funcRegistry.attachFunction("TURN_ON_LED", turn_on_led);
   funcRegistry.attachFunction("TURN_OFF_LED", turn_off_led);
   funcRegistry.attachFunction("PLAY_MELODY", play_melody);
-  funcRegistry.attachFunction("PLAY_MELODY_01", melody_01);
-  funcRegistry.attachFunction("PLAY_MELODY_02", melody_02);
-  funcRegistry.attachFunction("PLAY_MELODY_03", melody_03);
-  funcRegistry.attachFunction("PLAY_MELODY_04", melody_04);
+  funcRegistry.attachFunction("PLAY_MELODY_HAPPY", melody_01);
+  funcRegistry.attachFunction("PLAY_MELODY_GLOOMY", melody_02);
+  funcRegistry.attachFunction("PLAY_MELODY_EXCITED", melody_03);
+  funcRegistry.attachFunction("PLAY_MELODY_DARK", melody_04);
 
   
   // Initialize AI controller
@@ -104,6 +125,7 @@ void loop() {
 
     // Get AI response
     String result;
+
     
     if (aiController->processTextData(inputData, funcRegistry.getBulletList(), result)) {
         Serial.printf("AI Response: %s\n", result.c_str());
