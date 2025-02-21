@@ -20,11 +20,12 @@ const char* OpenAIConfig::BASE_PROMPT = "You are an automata with a goal and a l
 //                                "The light range is from 100 to 4095, which must include four different mood options. \\n"
 //                                "Then choose a melody that matches that mood using the melody function descriptions and play just that melody function for five seconds. \\n"
 //                                "Then check the light sensor again and play another melody based on the new light reading. \\n";
-const char* OpenAIConfig::GOAL = "Goal: Begin by playing a neutral melody using the melody functions. \\n"
-                                  "Then read the light sensor to determine the mood of the room.\\n"
-                                  "Brighter light is happier while less light is sadder. \\n"
-                                  "The brightest light is a value of 4095 and the darkest light is a value of 100. \\n"
-                                  "After the neutral melody finishes then play a melody that corresponds to the current mood of the room that you determined from the light sensor value.\\n";
+const char* OpenAIConfig::GOAL = "Goal: Begin by reading the current light level from the light sensor. \\n"
+                                  "The brightest light is a value of 4095 and the darkest light is a value of 300. \\n"
+                                  "A higher light level value is happier while a lower light level value is sadder. \\n"
+                                  "No not play the melodies sequentially, select only the single corresponding melody.\\n"
+                                  "Then play only the one melody that corresponds to the current mood of the room that you determined from reading the light sensor value.\\n";
+
 
 
 // Hardware Configuration definitions

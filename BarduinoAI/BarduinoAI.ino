@@ -38,7 +38,7 @@ String play_melody() {
 
 String melody_01() {
   Serial.println("melody 01");
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 3; i++) {
     tone(PinConfig::BUZZER, NOTE_C2, 500);
     //delay(1000);
     //noTone(PinConfig::BUZZER);
@@ -49,7 +49,7 @@ String melody_01() {
 
 String melody_02() {
   Serial.println("melody 02");
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 3; i++) {
     tone(PinConfig::BUZZER, NOTE_C4, 500);
     //delay(1000);
     //noTone(PinConfig::BUZZER);
@@ -60,7 +60,7 @@ String melody_02() {
 
 String melody_03() {
   Serial.println("melody 03");
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 3; i++) {
     tone(PinConfig::BUZZER, NOTE_C5, 500);
     //delay(1000);
     //noTone(PinConfig::BUZZER);
@@ -71,7 +71,7 @@ String melody_03() {
 
 String melody_04() {
   Serial.println("melody 04");
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 3; i++) {
     tone(PinConfig::BUZZER, NOTE_C6, 500);
     //delay(1000);
     //noTone(PinConfig::BUZZER);
@@ -82,7 +82,7 @@ String melody_04() {
 
 String melody_05() {
   Serial.println("melody 05");
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 3; i++) {
     tone(PinConfig::BUZZER, NOTE_C8, 500);
     //delay(1000);
     //noTone(PinConfig::BUZZER);
