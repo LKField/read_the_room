@@ -22,8 +22,8 @@ const char* OpenAIConfig::BASE_PROMPT = "You are an automata with a goal and a l
 //                                "Then check the light sensor again and play another melody based on the new light reading. \\n";
 const char* OpenAIConfig::GOAL = "Goal: Begin by reading the current light level from the light sensor. \\n"
                                   "The brightest light is a value of 4095 and the darkest light is a value of 300. \\n"
-                                  "A higher light level value is happier while a lower light level value is sadder. \\n"
-                                  "No not play the melodies sequentially, select only the single corresponding melody.\\n"
+                                  "A higher light value is happier while a lower light value is sadder. \\n"
+                                  "Do not play the melodies sequentially, select only the single corresponding melody.\\n"
                                   "Then play only the one melody that corresponds to the current mood of the room that you determined from reading the light sensor value.\\n";
 
 
