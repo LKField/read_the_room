@@ -45,6 +45,7 @@ String melody_01() {
     delay(1000);
   }
   Serial.println("melody 01 - done");
+  return "";
 }
 
 String melody_02() {
@@ -56,6 +57,7 @@ String melody_02() {
     delay(1000);
   }
   Serial.println("melody 02 - done");
+  return "";
 }
 
 String melody_03() {
@@ -67,6 +69,7 @@ String melody_03() {
     delay(1000);
   }
   Serial.println("melody 03 - done");
+  return "";
 }
 
 String melody_04() {
@@ -78,6 +81,7 @@ String melody_04() {
     delay(1000);
   }
   Serial.println("melody 04 - done");
+  return "";
 }
 
 String melody_05() {
@@ -89,6 +93,7 @@ String melody_05() {
     delay(1000);
   }
   Serial.println("melody 05 - done");
+  return "";
 }
 
 void setupWiFi() {
@@ -146,6 +151,8 @@ void loop() {
         Serial.printf("AI Response: %s\n", result.c_str());
         
         if (auto func = funcRegistry.getFunctionByName(result)) {
+            Serial.print("FUNCTION");
+            Serial.println(result);
             func();
         }
     } else {
